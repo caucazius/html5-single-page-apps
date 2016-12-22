@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tacky Header</title>
+
+    <!-- import Google font -->
+    <link href='http://fonts.googleapis.com/css?family=PT+Sans' rel='stylesheet' type='text/css'>
+
+    <style>
+
+        html {
+            -ms-text-size-adjust: 100%;
+            -webkit-text-size-adjust: 100%;
+        }
+        body {
+            margin: 0;
+            font: 16px/1 sans-serif;
+            -moz-osx-font-smoothing: grayscale;
+            -webkit-font-smoothing: antialiased;
+        }
+        h1, h2, h3, h4, p, blockquote, figure, ol, ul,header {
+            margin: 0;
+            padding: 0;
+        }
+        main, li {
+            display: block;
+        }
+        h1, h2, h3, h4 {
+            font-size: inherit;
+        }
+        strong {
+            font-weight: bold;
+        }
+        a, button {
+            color: inherit;
+            transition: .3s;
+            text-decoration: none;
+        }
+        button {
+            overflow: visible;
+            border: 0;
+            font: inherit;
+            -webkit-font-smoothing: inherit;
+            letter-spacing: inherit;
+            background: none;
+            cursor: pointer;
+        }
+        ::-moz-focus-inner {
+            padding: 0;
+            border: 0;
+        }
+        :focus {
+            outline: 0;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            border: 0;
+        }
+
+        header{
+            top: 0;
+            text-align: center;
+            font-size: 72px;
+            line-height: 108px;
+            height: 108px;
+            background: rgba(41, 41, 41, 0.92);
+            color: #ffffff;
+            font-family: 'PT Sans', sans-serif;
+            -webkit-transition: all 0.4s cubic-bezier(0.4, 0, 1, 1);;
+            transition: all 0.4s cubic-bezier(0.4, 0, 1, 1);;
+        }
+
+        header.tacky {
+            top: 0;
+            position: fixed;
+            font-size: 24px;
+            line-height: 48px;
+            height: 48px;
+            width: 100%;
+            background: rgba(142, 106, 117, 0.75);
+            text-align: left;
+            padding-left: 20px;
+        }
+
+        .downarrow {
+            display: block;
+            position: absolute;
+            margin-top: 100px;
+            width: 240px;
+            top: 5%;
+        }
+
+        .uparrow {
+            display: table;
+            position: absolute;
+            width: 240px;
+            padding-top: 1200px;
+            padding-bottom: 2000px;
+        }
+
+        .rectangle {
+            display: block;
+            position: relative;
+            width: 240px;
+            left: calc((240px - 120px) / 2);
+        }
+
+        .poly {
+            display: block;
+            position: relative;
+        }
+
+        svg {
+            display: block;
+            margin: auto auto;
+            fill: blue;
+            opacity: 0.5;
+        }
+
+    </style>
+
+</head>
+<body>
+
+<header><h1>Tacky Header</h1></header>
+
+<div class="downarrow">
+    <div class="rectangle">
+        <svg>
+            <rect x="0" y="0" width="120" height="400"/>
+        </svg>
+    </div>
+    <div class="poly">
+        <svg>
+            <polygon points="0,0 120,150 240,0"/>
+        </svg>
+    </div>
+</div>
+<div class="uparrow">
+    <div class="poly">
+        <svg>
+            <polygon points="0,150 240,150 120,0"/>
+        </svg>
+    </div>
+    <div class="rectangle">
+        <svg>
+            <rect x="0" y="0" width="120" height="350"/>
+        </svg>
+    </div>
+</div>
+<!-- import jQuery -->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+
+<!-- script to toggle class on scroll -->
+<script>
+$(window).scroll(function() {
+    if ($(this).scrollTop() > 1) {
+        $('header').addClass("tacky");
+    }
+    else{
+        $('header').removeClass("tacky");
+    }
+});
+</script>
+</body>
+</html>
